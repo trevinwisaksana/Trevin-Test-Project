@@ -1,0 +1,591 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		DD2BE89621B6952F00B74C28 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD2BE89521B6952F00B74C28 /* AppDelegate.swift */; };
+		DD2BE89821B6952F00B74C28 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD2BE89721B6952F00B74C28 /* ViewController.swift */; };
+		DD2BE89B21B6952F00B74C28 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD2BE89921B6952F00B74C28 /* Main.storyboard */; };
+		DD2BE89D21B6953200B74C28 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DD2BE89C21B6953200B74C28 /* Assets.xcassets */; };
+		DD2BE8A021B6953200B74C28 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD2BE89E21B6953200B74C28 /* LaunchScreen.storyboard */; };
+		DD2BE8AB21B6953200B74C28 /* Trevin_Test_ProjectTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD2BE8AA21B6953200B74C28 /* Trevin_Test_ProjectTests.swift */; };
+		DD2BE8B621B6953200B74C28 /* Trevin_Test_ProjectUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD2BE8B521B6953200B74C28 /* Trevin_Test_ProjectUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		DD2BE8A721B6953200B74C28 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DD2BE88A21B6952F00B74C28 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DD2BE89121B6952F00B74C28;
+			remoteInfo = "Trevin-Test-Project";
+		};
+		DD2BE8B221B6953200B74C28 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DD2BE88A21B6952F00B74C28 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DD2BE89121B6952F00B74C28;
+			remoteInfo = "Trevin-Test-Project";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		DD2BE89221B6952F00B74C28 /* Trevin-Test-Project.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Trevin-Test-Project.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		DD2BE89521B6952F00B74C28 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		DD2BE89721B6952F00B74C28 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		DD2BE89A21B6952F00B74C28 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		DD2BE89C21B6953200B74C28 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		DD2BE89F21B6953200B74C28 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		DD2BE8A121B6953200B74C28 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DD2BE8A621B6953200B74C28 /* Trevin-Test-ProjectTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Trevin-Test-ProjectTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		DD2BE8AA21B6953200B74C28 /* Trevin_Test_ProjectTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Trevin_Test_ProjectTests.swift; sourceTree = "<group>"; };
+		DD2BE8AC21B6953200B74C28 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DD2BE8B121B6953200B74C28 /* Trevin-Test-ProjectUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Trevin-Test-ProjectUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		DD2BE8B521B6953200B74C28 /* Trevin_Test_ProjectUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Trevin_Test_ProjectUITests.swift; sourceTree = "<group>"; };
+		DD2BE8B721B6953200B74C28 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		DD2BE88F21B6952F00B74C28 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DD2BE8A321B6953200B74C28 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DD2BE8AE21B6953200B74C28 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		DD2BE88921B6952F00B74C28 = {
+			isa = PBXGroup;
+			children = (
+				DD2BE89421B6952F00B74C28 /* Trevin-Test-Project */,
+				DD2BE8A921B6953200B74C28 /* Trevin-Test-ProjectTests */,
+				DD2BE8B421B6953200B74C28 /* Trevin-Test-ProjectUITests */,
+				DD2BE89321B6952F00B74C28 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		DD2BE89321B6952F00B74C28 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				DD2BE89221B6952F00B74C28 /* Trevin-Test-Project.app */,
+				DD2BE8A621B6953200B74C28 /* Trevin-Test-ProjectTests.xctest */,
+				DD2BE8B121B6953200B74C28 /* Trevin-Test-ProjectUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		DD2BE89421B6952F00B74C28 /* Trevin-Test-Project */ = {
+			isa = PBXGroup;
+			children = (
+				DD2BE89521B6952F00B74C28 /* AppDelegate.swift */,
+				DD2BE89721B6952F00B74C28 /* ViewController.swift */,
+				DD2BE89921B6952F00B74C28 /* Main.storyboard */,
+				DD2BE89C21B6953200B74C28 /* Assets.xcassets */,
+				DD2BE89E21B6953200B74C28 /* LaunchScreen.storyboard */,
+				DD2BE8A121B6953200B74C28 /* Info.plist */,
+			);
+			path = "Trevin-Test-Project";
+			sourceTree = "<group>";
+		};
+		DD2BE8A921B6953200B74C28 /* Trevin-Test-ProjectTests */ = {
+			isa = PBXGroup;
+			children = (
+				DD2BE8AA21B6953200B74C28 /* Trevin_Test_ProjectTests.swift */,
+				DD2BE8AC21B6953200B74C28 /* Info.plist */,
+			);
+			path = "Trevin-Test-ProjectTests";
+			sourceTree = "<group>";
+		};
+		DD2BE8B421B6953200B74C28 /* Trevin-Test-ProjectUITests */ = {
+			isa = PBXGroup;
+			children = (
+				DD2BE8B521B6953200B74C28 /* Trevin_Test_ProjectUITests.swift */,
+				DD2BE8B721B6953200B74C28 /* Info.plist */,
+			);
+			path = "Trevin-Test-ProjectUITests";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		DD2BE89121B6952F00B74C28 /* Trevin-Test-Project */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DD2BE8BA21B6953200B74C28 /* Build configuration list for PBXNativeTarget "Trevin-Test-Project" */;
+			buildPhases = (
+				DD2BE88E21B6952F00B74C28 /* Sources */,
+				DD2BE88F21B6952F00B74C28 /* Frameworks */,
+				DD2BE89021B6952F00B74C28 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Trevin-Test-Project";
+			productName = "Trevin-Test-Project";
+			productReference = DD2BE89221B6952F00B74C28 /* Trevin-Test-Project.app */;
+			productType = "com.apple.product-type.application";
+		};
+		DD2BE8A521B6953200B74C28 /* Trevin-Test-ProjectTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DD2BE8BD21B6953200B74C28 /* Build configuration list for PBXNativeTarget "Trevin-Test-ProjectTests" */;
+			buildPhases = (
+				DD2BE8A221B6953200B74C28 /* Sources */,
+				DD2BE8A321B6953200B74C28 /* Frameworks */,
+				DD2BE8A421B6953200B74C28 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DD2BE8A821B6953200B74C28 /* PBXTargetDependency */,
+			);
+			name = "Trevin-Test-ProjectTests";
+			productName = "Trevin-Test-ProjectTests";
+			productReference = DD2BE8A621B6953200B74C28 /* Trevin-Test-ProjectTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		DD2BE8B021B6953200B74C28 /* Trevin-Test-ProjectUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DD2BE8C021B6953200B74C28 /* Build configuration list for PBXNativeTarget "Trevin-Test-ProjectUITests" */;
+			buildPhases = (
+				DD2BE8AD21B6953200B74C28 /* Sources */,
+				DD2BE8AE21B6953200B74C28 /* Frameworks */,
+				DD2BE8AF21B6953200B74C28 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DD2BE8B321B6953200B74C28 /* PBXTargetDependency */,
+			);
+			name = "Trevin-Test-ProjectUITests";
+			productName = "Trevin-Test-ProjectUITests";
+			productReference = DD2BE8B121B6953200B74C28 /* Trevin-Test-ProjectUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		DD2BE88A21B6952F00B74C28 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1010;
+				LastUpgradeCheck = 1010;
+				ORGANIZATIONNAME = "Trevin Wisaksana";
+				TargetAttributes = {
+					DD2BE89121B6952F00B74C28 = {
+						CreatedOnToolsVersion = 10.1;
+					};
+					DD2BE8A521B6953200B74C28 = {
+						CreatedOnToolsVersion = 10.1;
+						TestTargetID = DD2BE89121B6952F00B74C28;
+					};
+					DD2BE8B021B6953200B74C28 = {
+						CreatedOnToolsVersion = 10.1;
+						TestTargetID = DD2BE89121B6952F00B74C28;
+					};
+				};
+			};
+			buildConfigurationList = DD2BE88D21B6952F00B74C28 /* Build configuration list for PBXProject "Trevin-Test-Project" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = DD2BE88921B6952F00B74C28;
+			productRefGroup = DD2BE89321B6952F00B74C28 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				DD2BE89121B6952F00B74C28 /* Trevin-Test-Project */,
+				DD2BE8A521B6953200B74C28 /* Trevin-Test-ProjectTests */,
+				DD2BE8B021B6953200B74C28 /* Trevin-Test-ProjectUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		DD2BE89021B6952F00B74C28 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DD2BE8A021B6953200B74C28 /* LaunchScreen.storyboard in Resources */,
+				DD2BE89D21B6953200B74C28 /* Assets.xcassets in Resources */,
+				DD2BE89B21B6952F00B74C28 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DD2BE8A421B6953200B74C28 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DD2BE8AF21B6953200B74C28 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		DD2BE88E21B6952F00B74C28 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DD2BE89821B6952F00B74C28 /* ViewController.swift in Sources */,
+				DD2BE89621B6952F00B74C28 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DD2BE8A221B6953200B74C28 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DD2BE8AB21B6953200B74C28 /* Trevin_Test_ProjectTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DD2BE8AD21B6953200B74C28 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DD2BE8B621B6953200B74C28 /* Trevin_Test_ProjectUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		DD2BE8A821B6953200B74C28 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DD2BE89121B6952F00B74C28 /* Trevin-Test-Project */;
+			targetProxy = DD2BE8A721B6953200B74C28 /* PBXContainerItemProxy */;
+		};
+		DD2BE8B321B6953200B74C28 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DD2BE89121B6952F00B74C28 /* Trevin-Test-Project */;
+			targetProxy = DD2BE8B221B6953200B74C28 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		DD2BE89921B6952F00B74C28 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DD2BE89A21B6952F00B74C28 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		DD2BE89E21B6953200B74C28 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DD2BE89F21B6953200B74C28 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		DD2BE8B821B6953200B74C28 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		DD2BE8B921B6953200B74C28 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		DD2BE8BB21B6953200B74C28 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 9ME882KZTA;
+				INFOPLIST_FILE = "Trevin-Test-Project/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.twisaksana.Trevin-Test-Project";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		DD2BE8BC21B6953200B74C28 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 9ME882KZTA;
+				INFOPLIST_FILE = "Trevin-Test-Project/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.twisaksana.Trevin-Test-Project";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		DD2BE8BE21B6953200B74C28 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 9ME882KZTA;
+				INFOPLIST_FILE = "Trevin-Test-ProjectTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.twisaksana.Trevin-Test-ProjectTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Trevin-Test-Project.app/Trevin-Test-Project";
+			};
+			name = Debug;
+		};
+		DD2BE8BF21B6953200B74C28 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 9ME882KZTA;
+				INFOPLIST_FILE = "Trevin-Test-ProjectTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.twisaksana.Trevin-Test-ProjectTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Trevin-Test-Project.app/Trevin-Test-Project";
+			};
+			name = Release;
+		};
+		DD2BE8C121B6953200B74C28 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 9ME882KZTA;
+				INFOPLIST_FILE = "Trevin-Test-ProjectUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.twisaksana.Trevin-Test-ProjectUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Trevin-Test-Project";
+			};
+			name = Debug;
+		};
+		DD2BE8C221B6953200B74C28 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 9ME882KZTA;
+				INFOPLIST_FILE = "Trevin-Test-ProjectUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.twisaksana.Trevin-Test-ProjectUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Trevin-Test-Project";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		DD2BE88D21B6952F00B74C28 /* Build configuration list for PBXProject "Trevin-Test-Project" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DD2BE8B821B6953200B74C28 /* Debug */,
+				DD2BE8B921B6953200B74C28 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DD2BE8BA21B6953200B74C28 /* Build configuration list for PBXNativeTarget "Trevin-Test-Project" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DD2BE8BB21B6953200B74C28 /* Debug */,
+				DD2BE8BC21B6953200B74C28 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DD2BE8BD21B6953200B74C28 /* Build configuration list for PBXNativeTarget "Trevin-Test-ProjectTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DD2BE8BE21B6953200B74C28 /* Debug */,
+				DD2BE8BF21B6953200B74C28 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DD2BE8C021B6953200B74C28 /* Build configuration list for PBXNativeTarget "Trevin-Test-ProjectUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DD2BE8C121B6953200B74C28 /* Debug */,
+				DD2BE8C221B6953200B74C28 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = DD2BE88A21B6952F00B74C28 /* Project object */;
+}
