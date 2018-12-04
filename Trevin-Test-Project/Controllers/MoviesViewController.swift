@@ -23,7 +23,20 @@ final class MoviesViewController: UIViewController {
         return collectionView
     }()
     
+    // MARK: - Setup
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        setup()
+    }
+    
+    private func setup() {
+        moviesCollectionView.fillInSuperview()
+        view.addSubview(moviesCollectionView)
+        
+        view.backgroundColor = .white
+    }
     
 }
 
@@ -35,7 +48,8 @@ extension MoviesViewController: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        return UICollectionViewCell()
+        let cell: MovieCell = collectionView.dequeueReusableCell(for: indexPath)
+        return cell
     }
 }
 

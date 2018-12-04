@@ -10,7 +10,8 @@
 #endif
 #endif
 
+#import "Kingfisher.h"
 
-FOUNDATION_EXPORT double ReachabilityVersionNumber;
-FOUNDATION_EXPORT const unsigned char ReachabilityVersionString[];
+FOUNDATION_EXPORT double KingfisherVersionNumber;
+FOUNDATION_EXPORT const unsigned char KingfisherVersionString[];
 

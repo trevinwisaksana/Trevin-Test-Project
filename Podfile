@@ -6,8 +6,9 @@ target 'Trevin-Test-Project' do
   use_frameworks!
 
   # Pods for Trevin-Test-Project
-  pod 'ReachabilitySwift'
   pod 'Alamofire'
+  pod 'SwiftyJSON'
+  pod 'Kingfisher'
 
   target 'Trevin-Test-ProjectTests' do
     inherit! :search_paths
