@@ -1,0 +1,6 @@
+framework module Pods_Trevin_Test_ProjectTests {
+  umbrella header "Pods-Trevin-Test-ProjectTests-umbrella.h"
+
+  export *
+  module * { export * }
+}
