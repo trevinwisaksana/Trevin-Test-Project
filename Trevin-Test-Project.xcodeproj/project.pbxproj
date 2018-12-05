@@ -24,6 +24,7 @@
 		DD2BE8D921B73B7800B74C28 /* MovieDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD2BE8D821B73B7800B74C28 /* MovieDetailViewModel.swift */; };
 		DD2BE8DB21B73CDA00B74C28 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD2BE8DA21B73CD900B74C28 /* NetworkService.swift */; };
 		DD2BE8DD21B7417800B74C28 /* Callbacks.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD2BE8DC21B7417800B74C28 /* Callbacks.swift */; };
+		DD2BE8E021B74F4700B74C28 /* UIColorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD2BE8DF21B74F4700B74C28 /* UIColorExtensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,6 +69,7 @@
 		DD2BE8D821B73B7800B74C28 /* MovieDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailViewModel.swift; sourceTree = "<group>"; };
 		DD2BE8DA21B73CD900B74C28 /* NetworkService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		DD2BE8DC21B7417800B74C28 /* Callbacks.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Callbacks.swift; sourceTree = "<group>"; };
+		DD2BE8DF21B74F4700B74C28 /* UIColorExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorExtensions.swift; sourceTree = "<group>"; };
 		DDF66A79D66252F6E022FD4D /* Pods_Trevin_Test_ProjectTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Trevin_Test_ProjectTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F2293D6B4D64350ACEABF183 /* Pods-Trevin-Test-Project.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Trevin-Test-Project.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Trevin-Test-Project/Pods-Trevin-Test-Project.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -196,6 +198,7 @@
 				DD2BE8D121B6CDE000B74C28 /* UIViewExtensions.swift */,
 				DD2BE8D421B6CE4D00B74C28 /* UIEdgeInsetsExtensions.swift */,
 				DD2BE8D621B6CED100B74C28 /* UICollectionViewExtensions.swift */,
+				DD2BE8DF21B74F4700B74C28 /* UIColorExtensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -427,6 +430,7 @@
 			files = (
 				DD2BE8D521B6CE4D00B74C28 /* UIEdgeInsetsExtensions.swift in Sources */,
 				DD2BE8CA21B6B02B00B74C28 /* Router.swift in Sources */,
+				DD2BE8E021B74F4700B74C28 /* UIColorExtensions.swift in Sources */,
 				DD2BE8DD21B7417800B74C28 /* Callbacks.swift in Sources */,
 				DD2BE8D221B6CDE000B74C28 /* UIViewExtensions.swift in Sources */,
 				DD2BE8DB21B73CDA00B74C28 /* NetworkService.swift in Sources */,
