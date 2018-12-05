@@ -27,4 +27,4 @@ This is a test project for an interview that interfaces with the OMDb API to lis
 To run this application, please install its dependcies using Cocoapods by running `pod install` using terminal on its directory. If there are any issues, please feel free to contact me.
 
 ## Areas of Improvements
-If given more time, I would create a more sophisticated pagination mechanism to assure that it would fetch one at a time.
+If given more time, I would create a more sophisticated pagination mechanism to assure that it would fetch one at a time. Additionally, I would also display more information about each movie on the MovieDetailViewController.
