@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		B842BFF668805F9EBDFDEE09 /* Pods_Trevin_Test_Project.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 510525829AA2F70A02916FEB /* Pods_Trevin_Test_Project.framework */; };
 		C3A1CC945625231F94C70FA2 /* Pods_Trevin_Test_ProjectTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDF66A79D66252F6E022FD4D /* Pods_Trevin_Test_ProjectTests.framework */; };
+		DD10F7AF21B7797200C20906 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD10F7AE21B7797200C20906 /* SearchViewController.swift */; };
 		DD2BE89621B6952F00B74C28 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD2BE89521B6952F00B74C28 /* AppDelegate.swift */; };
 		DD2BE89D21B6953200B74C28 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DD2BE89C21B6953200B74C28 /* Assets.xcassets */; };
 		DD2BE8A021B6953200B74C28 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD2BE89E21B6953200B74C28 /* LaunchScreen.storyboard */; };
@@ -21,10 +22,10 @@
 		DD2BE8D221B6CDE000B74C28 /* UIViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD2BE8D121B6CDE000B74C28 /* UIViewExtensions.swift */; };
 		DD2BE8D521B6CE4D00B74C28 /* UIEdgeInsetsExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD2BE8D421B6CE4D00B74C28 /* UIEdgeInsetsExtensions.swift */; };
 		DD2BE8D721B6CED100B74C28 /* UICollectionViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD2BE8D621B6CED100B74C28 /* UICollectionViewExtensions.swift */; };
-		DD2BE8D921B73B7800B74C28 /* MovieDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD2BE8D821B73B7800B74C28 /* MovieDetailViewModel.swift */; };
 		DD2BE8DB21B73CDA00B74C28 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD2BE8DA21B73CD900B74C28 /* NetworkService.swift */; };
 		DD2BE8DD21B7417800B74C28 /* Callbacks.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD2BE8DC21B7417800B74C28 /* Callbacks.swift */; };
 		DD2BE8E021B74F4700B74C28 /* UIColorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD2BE8DF21B74F4700B74C28 /* UIColorExtensions.swift */; };
+		DD2BE8E221B7685700B74C28 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD2BE8E121B7685700B74C28 /* Reachability.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		510525829AA2F70A02916FEB /* Pods_Trevin_Test_Project.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Trevin_Test_Project.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8A5F1536D4D31DBBFB4E417A /* Pods-Trevin-Test-ProjectTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Trevin-Test-ProjectTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Trevin-Test-ProjectTests/Pods-Trevin-Test-ProjectTests.release.xcconfig"; sourceTree = "<group>"; };
 		BB16C18B2FB4AE3210EC47AF /* Pods-Trevin-Test-Project.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Trevin-Test-Project.release.xcconfig"; path = "Pods/Target Support Files/Pods-Trevin-Test-Project/Pods-Trevin-Test-Project.release.xcconfig"; sourceTree = "<group>"; };
+		DD10F7AE21B7797200C20906 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		DD2BE89221B6952F00B74C28 /* Trevin-Test-Project.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Trevin-Test-Project.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DD2BE89521B6952F00B74C28 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DD2BE89C21B6953200B74C28 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -66,10 +68,10 @@
 		DD2BE8D121B6CDE000B74C28 /* UIViewExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewExtensions.swift; sourceTree = "<group>"; };
 		DD2BE8D421B6CE4D00B74C28 /* UIEdgeInsetsExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIEdgeInsetsExtensions.swift; sourceTree = "<group>"; };
 		DD2BE8D621B6CED100B74C28 /* UICollectionViewExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UICollectionViewExtensions.swift; sourceTree = "<group>"; };
-		DD2BE8D821B73B7800B74C28 /* MovieDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailViewModel.swift; sourceTree = "<group>"; };
 		DD2BE8DA21B73CD900B74C28 /* NetworkService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		DD2BE8DC21B7417800B74C28 /* Callbacks.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Callbacks.swift; sourceTree = "<group>"; };
 		DD2BE8DF21B74F4700B74C28 /* UIColorExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorExtensions.swift; sourceTree = "<group>"; };
+		DD2BE8E121B7685700B74C28 /* Reachability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 		DDF66A79D66252F6E022FD4D /* Pods_Trevin_Test_ProjectTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Trevin_Test_ProjectTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F2293D6B4D64350ACEABF183 /* Pods-Trevin-Test-Project.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Trevin-Test-Project.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Trevin-Test-Project/Pods-Trevin-Test-Project.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -162,6 +164,7 @@
 			children = (
 				DD2BE8C321B6A1DE00B74C28 /* MoviesViewController.swift */,
 				DD2BE8CC21B6C5E900B74C28 /* MovieDetailViewController.swift */,
+				DD10F7AE21B7797200C20906 /* SearchViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -170,7 +173,6 @@
 			isa = PBXGroup;
 			children = (
 				DD2BE8C621B6A22300B74C28 /* MovieViewModel.swift */,
-				DD2BE8D821B73B7800B74C28 /* MovieDetailViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -207,6 +209,7 @@
 			isa = PBXGroup;
 			children = (
 				DD2BE8DC21B7417800B74C28 /* Callbacks.swift */,
+				DD2BE8E121B7685700B74C28 /* Reachability.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -428,6 +431,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DD2BE8E221B7685700B74C28 /* Reachability.swift in Sources */,
 				DD2BE8D521B6CE4D00B74C28 /* UIEdgeInsetsExtensions.swift in Sources */,
 				DD2BE8CA21B6B02B00B74C28 /* Router.swift in Sources */,
 				DD2BE8E021B74F4700B74C28 /* UIColorExtensions.swift in Sources */,
@@ -435,9 +439,9 @@
 				DD2BE8D221B6CDE000B74C28 /* UIViewExtensions.swift in Sources */,
 				DD2BE8DB21B73CDA00B74C28 /* NetworkService.swift in Sources */,
 				DD2BE8CD21B6C5E900B74C28 /* MovieDetailViewController.swift in Sources */,
+				DD10F7AF21B7797200C20906 /* SearchViewController.swift in Sources */,
 				DD2BE8D721B6CED100B74C28 /* UICollectionViewExtensions.swift in Sources */,
 				DD2BE8CF21B6C60C00B74C28 /* MovieCell.swift in Sources */,
-				DD2BE8D921B73B7800B74C28 /* MovieDetailViewModel.swift in Sources */,
 				DD2BE89621B6952F00B74C28 /* AppDelegate.swift in Sources */,
 				DD2BE8C721B6A22300B74C28 /* MovieViewModel.swift in Sources */,
 				DD2BE8C421B6A1DE00B74C28 /* MoviesViewController.swift in Sources */,

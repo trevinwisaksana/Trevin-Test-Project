@@ -7,27 +7,19 @@
 //
 
 import UIKit
+import Kingfisher
+
+protocol MovieCellViewModel {
+    var posterURL: String { get }
+}
 
 final class MovieCell: UICollectionViewCell {
     
     // MARK: - Internal Properties
     
-    private lazy var titleBackgroundView: UIView = {
-        let view = UIView(frame: .zero)
-        view.translatesAutoresizingMaskIntoConstraints = false
-        view.backgroundColor = UIColor(r: 255, g: 255, b: 255, a: 0.3)
-        return view
-    }()
-    
-    private lazy var titleLabel: UILabel = {
-        let label = UILabel()
-        label.text = "Interstellar"
-        label.translatesAutoresizingMaskIntoConstraints = false
-        return label
-    }()
-    
     private lazy var posterImageView: UIImageView = {
         let imageView = UIImageView()
+        imageView.contentMode = .scaleAspectFit
         return imageView
     }()
     
@@ -45,32 +37,24 @@ final class MovieCell: UICollectionViewCell {
     }
     
     private func setup() {
-        addSubview(titleLabel)
-        addSubview(titleBackgroundView)
         addSubview(posterImageView)
-        
         posterImageView.fillInSuperview()
         
-        backgroundColor = .blue
-        
-        NSLayoutConstraint.activate([
-            titleBackgroundView.leftAnchor.constraint(equalTo: leftAnchor, constant: 0),
-            titleBackgroundView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: 0),
-            titleBackgroundView.rightAnchor.constraint(equalTo: rightAnchor, constant: 0),
-            titleBackgroundView.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 0.3),
-            
-            titleLabel.leftAnchor.constraint(equalTo: leftAnchor, constant: 10),
-            titleLabel.bottomAnchor.constraint(equalTo: bottomAnchor, constant: 10)
-        ])
+        layer.cornerRadius = 8
     }
     
     // MARK: - Dependency injection
     
     /// The model contains data used to populate the view.
-    public var model: MovieViewModel? {
+    public var model: MovieCellViewModel? {
         didSet {
             if let model = model {
-                titleLabel.text = model.title
+                do {
+                    let posterURL = try model.posterURL.asURL()
+                    posterImageView.kf.setImage(with: posterURL)
+                } catch {
+                    // TODO: Handle error
+                }
             }
         }
     }

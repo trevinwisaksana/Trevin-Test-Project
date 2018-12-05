@@ -10,6 +10,10 @@ import UIKit
 
 final class MoviesViewController: UIViewController {
     
+    // MARK: - Public Properties
+    
+    public var dataSource: MovieDataSource = MovieDataSource()
+    
     // MARK: - Internal Properties
     
     lazy var moviesCollectionView: UICollectionView = {
@@ -17,6 +21,7 @@ final class MoviesViewController: UIViewController {
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: collectionViewFlowLayout)
         
         collectionView.backgroundColor = .clear
+        collectionView.alwaysBounceVertical = true
         
         collectionView.delegate = self
         collectionView.dataSource = self
@@ -38,7 +43,14 @@ final class MoviesViewController: UIViewController {
         view.addSubview(moviesCollectionView)
         moviesCollectionView.fillInSuperview()
         
+        dataSource.delegate = self
+        dataSource.fetchMovies(withTitle: "Interstellar")
+        
         view.backgroundColor = .white
+    }
+    
+    private func reloadData() {
+        moviesCollectionView.reloadData()
     }
     
 }
@@ -47,11 +59,12 @@ final class MoviesViewController: UIViewController {
 
 extension MoviesViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 2
+        return dataSource.numberOfMovies
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell: MovieCell = collectionView.dequeueReusableCell(for: indexPath)
+        cell.model = dataSource.movie(atIndex: indexPath)
         return cell
     }
 }
@@ -60,7 +73,9 @@ extension MoviesViewController: UICollectionViewDataSource {
 
 extension MoviesViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
+        let movie = dataSource.movie(atIndex: indexPath)
+        let movieDetailViewController = MovieDetailViewController(movie: movie)
+        present(movieDetailViewController, animated: true, completion: nil)
     }
 }
 
@@ -75,6 +90,18 @@ extension MoviesViewController: UICollectionViewDelegateFlowLayout {
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        return UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
+        return UIEdgeInsets(top: 20, left: 20, bottom: 10, right: 20)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        return 10.0
+    }
+}
+
+// MARK: - MovieDataSourceDelegate
+
+extension MoviesViewController: MovieDataSourceDelegate {
+    func didLoadMovieData() {
+        reloadData()
     }
 }

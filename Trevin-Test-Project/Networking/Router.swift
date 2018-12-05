@@ -26,7 +26,7 @@ public enum Router: URLRequestConvertible {
         let parameters: [String: Any] = {
             switch self {
             case .movie(let title):
-                return ["t" : title]
+                return ["s" : title]
             }
         }()
         

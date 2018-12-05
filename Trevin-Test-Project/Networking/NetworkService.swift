@@ -17,15 +17,22 @@ struct NetworkService {
     
     // MARK: - Fetching Movies
     
-    func fetchMovie(withTitle title: String, success: @escaping SuccessOperationClosure) {
+    func fetchMovie(withTitle title: String, completion: @escaping (([Movie], Error?) -> Void)) {
         let movieURL = Router.movie(title: title)
             
         Alamofire.request(movieURL).validate().responseJSON { (response) in
             switch response.result {
-            case .success:
-                success(true)
-            case .failure:
-                success(false)
+            case .success(let data):
+                guard let jsonArray = JSON(data)["Search"].array else {
+                    return
+                }
+                
+                let movies = jsonArray.compactMap { Movie(json: $0) }
+                
+                completion(movies, nil)
+                
+            case .failure(let error):
+                completion([Movie](), error)
             }
         }
     }
