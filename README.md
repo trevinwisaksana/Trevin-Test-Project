@@ -1,6 +1,10 @@
 # Test Project
 This is a test project for an interview that interfaces with the OMDb API to list movies and show information about each of them.
 
+<p align="center">
+  <img src="https://github.com/trevinwisaksana/Trevin-Test-Project/blob/master/Screenshots/Test%20Project.gif"/>
+<p>
+
 ## Features
 • Ability to search movies and display its posters
 
