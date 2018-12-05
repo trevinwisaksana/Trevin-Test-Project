@@ -31,6 +31,7 @@ final class MoviesViewController: UIViewController {
     
     lazy var searchBar: UISearchBar = {
         let searchBar = UISearchBar(frame: .zero)
+        searchBar.placeholder = "Search movies"
         searchBar.delegate = self
         return searchBar
     }()
@@ -44,6 +45,9 @@ final class MoviesViewController: UIViewController {
     }
     
     private func setup() {
+        // If there's no connection, display alert
+        networkConnectCheck()
+        
         hideKeyboardWhenTappedAround()
         
         moviesCollectionView.register(cell: MovieCell.self)
@@ -83,9 +87,17 @@ extension MoviesViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
+        if dataSource.numberOfMovies == 0 {
+            collectionView.setEmptyMessage()
+        } else {
+            collectionView.restore()
+        }
+        
         if indexPath.row >= dataSource.numberOfMovies - 1 {
             dataSource.currentPage += 1
-            dataSource.fetchMovies(withTitle: searchBar.text ?? "")
+            dataSource.fetchMovies(withTitle: searchBar.text ?? "", success: { (isSuccessful) in
+                
+            })
         }
         
         let cell: MovieCell = collectionView.dequeueReusableCell(for: indexPath)
@@ -131,7 +143,10 @@ extension MoviesViewController: UICollectionViewDelegateFlowLayout {
 
 extension MoviesViewController: UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        dataSource.fetchMovies(withTitle: searchBar.text ?? "")
+        dataSource.fetchMovies(withTitle: searchBar.text ?? "", success: { (isSuccessful) in
+            
+        })
+        
         dismissKeyboard()
     }
 }

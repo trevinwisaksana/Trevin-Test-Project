@@ -11,6 +11,11 @@
 		C3A1CC945625231F94C70FA2 /* Pods_Trevin_Test_ProjectTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDF66A79D66252F6E022FD4D /* Pods_Trevin_Test_ProjectTests.framework */; };
 		DD10F7B121B78C1B00C20906 /* MovieDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD10F7B021B78C1B00C20906 /* MovieDetailView.swift */; };
 		DD10F7B621B7C47200C20906 /* MovieDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD10F7B521B7C47200C20906 /* MovieDetailViewModel.swift */; };
+		DD10F7BA21B7FFD900C20906 /* UIViewControllerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD10F7B921B7FFD900C20906 /* UIViewControllerExtensions.swift */; };
+		DD10F7BC21B8055200C20906 /* ample_movie_search_data.json in Resources */ = {isa = PBXBuildFile; fileRef = DD10F7BB21B8055200C20906 /* ample_movie_search_data.json */; };
+		DD10F7C021B80A2600C20906 /* faulty_movie_search_data.json in Resources */ = {isa = PBXBuildFile; fileRef = DD10F7BF21B80A2600C20906 /* faulty_movie_search_data.json */; };
+		DD10F7C221B80CB400C20906 /* DummyDataFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD10F7C121B80CB400C20906 /* DummyDataFactory.swift */; };
+		DD10F7C421B813EC00C20906 /* ample_movie_detail_data.json in Resources */ = {isa = PBXBuildFile; fileRef = DD10F7C321B813EC00C20906 /* ample_movie_detail_data.json */; };
 		DD2BE89621B6952F00B74C28 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD2BE89521B6952F00B74C28 /* AppDelegate.swift */; };
 		DD2BE89D21B6953200B74C28 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DD2BE89C21B6953200B74C28 /* Assets.xcassets */; };
 		DD2BE8A021B6953200B74C28 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD2BE89E21B6953200B74C28 /* LaunchScreen.storyboard */; };
@@ -24,20 +29,12 @@
 		DD2BE8D521B6CE4D00B74C28 /* UIEdgeInsetsExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD2BE8D421B6CE4D00B74C28 /* UIEdgeInsetsExtensions.swift */; };
 		DD2BE8D721B6CED100B74C28 /* UICollectionViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD2BE8D621B6CED100B74C28 /* UICollectionViewExtensions.swift */; };
 		DD2BE8DB21B73CDA00B74C28 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD2BE8DA21B73CD900B74C28 /* NetworkService.swift */; };
-		DD2BE8DD21B7417800B74C28 /* Callbacks.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD2BE8DC21B7417800B74C28 /* Callbacks.swift */; };
 		DD2BE8E021B74F4700B74C28 /* UIColorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD2BE8DF21B74F4700B74C28 /* UIColorExtensions.swift */; };
-		DD2BE8E221B7685700B74C28 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD2BE8E121B7685700B74C28 /* Reachability.swift */; };
+		DD2BE8E221B7685700B74C28 /* ReachabilityHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD2BE8E121B7685700B74C28 /* ReachabilityHelper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
 		DD2BE8A721B6953200B74C28 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = DD2BE88A21B6952F00B74C28 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = DD2BE89121B6952F00B74C28;
-			remoteInfo = "Trevin-Test-Project";
-		};
-		DD2BE8B221B6953200B74C28 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = DD2BE88A21B6952F00B74C28 /* Project object */;
 			proxyType = 1;
@@ -53,6 +50,11 @@
 		BB16C18B2FB4AE3210EC47AF /* Pods-Trevin-Test-Project.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Trevin-Test-Project.release.xcconfig"; path = "Pods/Target Support Files/Pods-Trevin-Test-Project/Pods-Trevin-Test-Project.release.xcconfig"; sourceTree = "<group>"; };
 		DD10F7B021B78C1B00C20906 /* MovieDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailView.swift; sourceTree = "<group>"; };
 		DD10F7B521B7C47200C20906 /* MovieDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailViewModel.swift; sourceTree = "<group>"; };
+		DD10F7B921B7FFD900C20906 /* UIViewControllerExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtensions.swift; sourceTree = "<group>"; };
+		DD10F7BB21B8055200C20906 /* ample_movie_search_data.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = ample_movie_search_data.json; sourceTree = "<group>"; };
+		DD10F7BF21B80A2600C20906 /* faulty_movie_search_data.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = faulty_movie_search_data.json; sourceTree = "<group>"; };
+		DD10F7C121B80CB400C20906 /* DummyDataFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DummyDataFactory.swift; sourceTree = "<group>"; };
+		DD10F7C321B813EC00C20906 /* ample_movie_detail_data.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = ample_movie_detail_data.json; sourceTree = "<group>"; };
 		DD2BE89221B6952F00B74C28 /* Trevin-Test-Project.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Trevin-Test-Project.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DD2BE89521B6952F00B74C28 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DD2BE89C21B6953200B74C28 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -61,7 +63,6 @@
 		DD2BE8A621B6953200B74C28 /* Trevin-Test-ProjectTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Trevin-Test-ProjectTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DD2BE8AA21B6953200B74C28 /* Trevin_Test_ProjectTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Trevin_Test_ProjectTests.swift; sourceTree = "<group>"; };
 		DD2BE8AC21B6953200B74C28 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		DD2BE8B121B6953200B74C28 /* Trevin-Test-ProjectUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Trevin-Test-ProjectUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DD2BE8C321B6A1DE00B74C28 /* MoviesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesViewController.swift; sourceTree = "<group>"; };
 		DD2BE8C621B6A22300B74C28 /* MoviePosterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviePosterViewModel.swift; sourceTree = "<group>"; };
 		DD2BE8C921B6B02B00B74C28 /* Router.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
@@ -71,9 +72,8 @@
 		DD2BE8D421B6CE4D00B74C28 /* UIEdgeInsetsExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIEdgeInsetsExtensions.swift; sourceTree = "<group>"; };
 		DD2BE8D621B6CED100B74C28 /* UICollectionViewExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UICollectionViewExtensions.swift; sourceTree = "<group>"; };
 		DD2BE8DA21B73CD900B74C28 /* NetworkService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
-		DD2BE8DC21B7417800B74C28 /* Callbacks.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Callbacks.swift; sourceTree = "<group>"; };
 		DD2BE8DF21B74F4700B74C28 /* UIColorExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorExtensions.swift; sourceTree = "<group>"; };
-		DD2BE8E121B7685700B74C28 /* Reachability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
+		DD2BE8E121B7685700B74C28 /* ReachabilityHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReachabilityHelper.swift; sourceTree = "<group>"; };
 		DDF66A79D66252F6E022FD4D /* Pods_Trevin_Test_ProjectTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Trevin_Test_ProjectTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F2293D6B4D64350ACEABF183 /* Pods-Trevin-Test-Project.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Trevin-Test-Project.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Trevin-Test-Project/Pods-Trevin-Test-Project.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -92,13 +92,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				C3A1CC945625231F94C70FA2 /* Pods_Trevin_Test_ProjectTests.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		DD2BE8AE21B6953200B74C28 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,7 +131,6 @@
 			children = (
 				DD2BE89221B6952F00B74C28 /* Trevin-Test-Project.app */,
 				DD2BE8A621B6953200B74C28 /* Trevin-Test-ProjectTests.xctest */,
-				DD2BE8B121B6953200B74C28 /* Trevin-Test-ProjectUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -164,6 +156,10 @@
 			isa = PBXGroup;
 			children = (
 				DD2BE8AA21B6953200B74C28 /* Trevin_Test_ProjectTests.swift */,
+				DD10F7C121B80CB400C20906 /* DummyDataFactory.swift */,
+				DD10F7C321B813EC00C20906 /* ample_movie_detail_data.json */,
+				DD10F7BB21B8055200C20906 /* ample_movie_search_data.json */,
+				DD10F7BF21B80A2600C20906 /* faulty_movie_search_data.json */,
 				DD2BE8AC21B6953200B74C28 /* Info.plist */,
 			);
 			path = "Trevin-Test-ProjectTests";
@@ -212,6 +208,7 @@
 				DD2BE8D421B6CE4D00B74C28 /* UIEdgeInsetsExtensions.swift */,
 				DD2BE8D621B6CED100B74C28 /* UICollectionViewExtensions.swift */,
 				DD2BE8DF21B74F4700B74C28 /* UIColorExtensions.swift */,
+				DD10F7B921B7FFD900C20906 /* UIViewControllerExtensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -219,8 +216,7 @@
 		DD2BE8DE21B7417C00B74C28 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
-				DD2BE8DC21B7417800B74C28 /* Callbacks.swift */,
-				DD2BE8E121B7685700B74C28 /* Reachability.swift */,
+				DD2BE8E121B7685700B74C28 /* ReachabilityHelper.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -266,6 +262,7 @@
 				DD2BE8A221B6953200B74C28 /* Sources */,
 				DD2BE8A321B6953200B74C28 /* Frameworks */,
 				DD2BE8A421B6953200B74C28 /* Resources */,
+				ADE0B84F9AF9BADAACD45A37 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -276,24 +273,6 @@
 			productName = "Trevin-Test-ProjectTests";
 			productReference = DD2BE8A621B6953200B74C28 /* Trevin-Test-ProjectTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
-		};
-		DD2BE8B021B6953200B74C28 /* Trevin-Test-ProjectUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = DD2BE8C021B6953200B74C28 /* Build configuration list for PBXNativeTarget "Trevin-Test-ProjectUITests" */;
-			buildPhases = (
-				DD2BE8AD21B6953200B74C28 /* Sources */,
-				DD2BE8AE21B6953200B74C28 /* Frameworks */,
-				DD2BE8AF21B6953200B74C28 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				DD2BE8B321B6953200B74C28 /* PBXTargetDependency */,
-			);
-			name = "Trevin-Test-ProjectUITests";
-			productName = "Trevin-Test-ProjectUITests";
-			productReference = DD2BE8B121B6953200B74C28 /* Trevin-Test-ProjectUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
 
@@ -309,10 +288,6 @@
 						CreatedOnToolsVersion = 10.1;
 					};
 					DD2BE8A521B6953200B74C28 = {
-						CreatedOnToolsVersion = 10.1;
-						TestTargetID = DD2BE89121B6952F00B74C28;
-					};
-					DD2BE8B021B6953200B74C28 = {
 						CreatedOnToolsVersion = 10.1;
 						TestTargetID = DD2BE89121B6952F00B74C28;
 					};
@@ -333,7 +308,6 @@
 			targets = (
 				DD2BE89121B6952F00B74C28 /* Trevin-Test-Project */,
 				DD2BE8A521B6953200B74C28 /* Trevin-Test-ProjectTests */,
-				DD2BE8B021B6953200B74C28 /* Trevin-Test-ProjectUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -352,13 +326,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		DD2BE8AF21B6953200B74C28 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
+				DD10F7BC21B8055200C20906 /* ample_movie_search_data.json in Resources */,
+				DD10F7C021B80A2600C20906 /* faulty_movie_search_data.json in Resources */,
+				DD10F7C421B813EC00C20906 /* ample_movie_detail_data.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -435,6 +405,28 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		ADE0B84F9AF9BADAACD45A37 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Trevin-Test-ProjectTests/Pods-Trevin-Test-ProjectTests-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Trevin-Test-ProjectTests/Pods-Trevin-Test-ProjectTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -443,13 +435,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				DD10F7B121B78C1B00C20906 /* MovieDetailView.swift in Sources */,
-				DD2BE8E221B7685700B74C28 /* Reachability.swift in Sources */,
+				DD2BE8E221B7685700B74C28 /* ReachabilityHelper.swift in Sources */,
 				DD2BE8D521B6CE4D00B74C28 /* UIEdgeInsetsExtensions.swift in Sources */,
 				DD2BE8CA21B6B02B00B74C28 /* Router.swift in Sources */,
 				DD2BE8E021B74F4700B74C28 /* UIColorExtensions.swift in Sources */,
-				DD2BE8DD21B7417800B74C28 /* Callbacks.swift in Sources */,
 				DD2BE8D221B6CDE000B74C28 /* UIViewExtensions.swift in Sources */,
 				DD2BE8DB21B73CDA00B74C28 /* NetworkService.swift in Sources */,
+				DD10F7BA21B7FFD900C20906 /* UIViewControllerExtensions.swift in Sources */,
 				DD2BE8CD21B6C5E900B74C28 /* MovieDetailViewController.swift in Sources */,
 				DD2BE8D721B6CED100B74C28 /* UICollectionViewExtensions.swift in Sources */,
 				DD2BE8CF21B6C60C00B74C28 /* MovieCell.swift in Sources */,
@@ -465,13 +457,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DD2BE8AB21B6953200B74C28 /* Trevin_Test_ProjectTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		DD2BE8AD21B6953200B74C28 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
+				DD10F7C221B80CB400C20906 /* DummyDataFactory.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -482,11 +468,6 @@
 			isa = PBXTargetDependency;
 			target = DD2BE89121B6952F00B74C28 /* Trevin-Test-Project */;
 			targetProxy = DD2BE8A721B6953200B74C28 /* PBXContainerItemProxy */;
-		};
-		DD2BE8B321B6953200B74C28 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = DD2BE89121B6952F00B74C28 /* Trevin-Test-Project */;
-			targetProxy = DD2BE8B221B6953200B74C28 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -700,46 +681,6 @@
 			};
 			name = Release;
 		};
-		DD2BE8C121B6953200B74C28 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 9ME882KZTA;
-				INFOPLIST_FILE = "Trevin-Test-ProjectUITests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.twisaksana.Trevin-Test-ProjectUITests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = "Trevin-Test-Project";
-			};
-			name = Debug;
-		};
-		DD2BE8C221B6953200B74C28 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 9ME882KZTA;
-				INFOPLIST_FILE = "Trevin-Test-ProjectUITests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.twisaksana.Trevin-Test-ProjectUITests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = "Trevin-Test-Project";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -766,15 +707,6 @@
 			buildConfigurations = (
 				DD2BE8BE21B6953200B74C28 /* Debug */,
 				DD2BE8BF21B6953200B74C28 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		DD2BE8C021B6953200B74C28 /* Build configuration list for PBXNativeTarget "Trevin-Test-ProjectUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				DD2BE8C121B6953200B74C28 /* Debug */,
-				DD2BE8C221B6953200B74C28 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

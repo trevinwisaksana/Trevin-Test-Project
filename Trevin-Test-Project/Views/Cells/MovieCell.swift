@@ -46,8 +46,9 @@ final class MovieCell: UICollectionViewCell {
                 do {
                     let posterURL = try model.posterURL.asURL()
                     posterImageView.kf.setImage(with: posterURL)
+                    posterImageView.kf.indicatorType = .activity
                 } catch {
-                    // TODO: Handle error
+                    fatalError("Failed to convert string to URL")
                 }
             }
         }

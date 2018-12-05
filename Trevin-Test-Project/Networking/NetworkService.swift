@@ -9,17 +9,13 @@
 import SwiftyJSON
 import Alamofire
 
-protocol NetworkServiceDelegate: class {
-    
-}
-
-struct NetworkService {
+class NetworkService {
     
     // MARK: - Fetching Movies
     
     func fetchMovies(withTitle title: String, atPage page: Int = 1, completion: @escaping (([MoviePoster], Error?) -> Void)) {
         let movieURL = Router.search(movie: title, page: page)
-            
+        
         Alamofire.request(movieURL).validate().responseJSON { (response) in
             switch response.result {
             case .success(let data):

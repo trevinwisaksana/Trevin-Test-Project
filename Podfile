@@ -13,6 +13,7 @@ target 'Trevin-Test-Project' do
   target 'Trevin-Test-ProjectTests' do
     inherit! :search_paths
     # Pods for testing
+    pod 'SwiftyJSON'
   end
 
 end

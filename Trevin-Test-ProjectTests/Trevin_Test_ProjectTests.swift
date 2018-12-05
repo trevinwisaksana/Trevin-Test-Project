@@ -7,28 +7,49 @@
 //
 
 import XCTest
+import SwiftyJSON
 @testable import Trevin_Test_Project
 
 class Trevin_Test_ProjectTests: XCTestCase {
+    
+    var dummyDataFactory: DummyDataFactory?
 
     override func setUp() {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+        dummyDataFactory = DummyDataFactory()
     }
 
     override func tearDown() {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
 
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
-
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
+    func testSucessfulMoviePostersDataParsing() {
+        guard let jsonArray = dummyDataFactory?.ampleMoviePostersData() else {
+            fatalError("Failed to retrieve JSON array.")
         }
+        
+        let moviePoster = jsonArray.compactMap { MoviePoster(json: $0) }
+        
+        XCTAssertEqual(moviePoster.count, 8)
+    }
+    
+    func testFailingMoviePosterDataParsing() {
+        guard let jsonArray = dummyDataFactory?.faultyMoviePostersData() else {
+            fatalError("Failed to retrieve JSON array.")
+        }
+        
+        let moviePoster = jsonArray.compactMap { MoviePoster(json: $0) }
+        
+        XCTAssertEqual(moviePoster.count, 0)
+    }
+    
+    func testSucessfulMovieDetailDataParsing() {
+        guard let json = dummyDataFactory?.ampleMovieDetailData() else {
+            fatalError("Failed to retrieve JSON data.")
+        }
+        
+        let movieDetail = MovieDetail(json: json)
+        
+        XCTAssertNotNil(movieDetail)
     }
 
 }

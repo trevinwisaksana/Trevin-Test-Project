@@ -22,8 +22,9 @@ final class MovieDetailView: UIView {
                 do {
                     let posterURL = try model.posterURL.asURL()
                     posterImageView.kf.setImage(with: posterURL)
+                    posterImageView.kf.indicatorType = .activity
                 } catch {
-                    // TODO: Handle error
+                    fatalError("Failed to convert string to URL")
                 }
             }
         }
@@ -127,11 +128,11 @@ final class MovieDetailView: UIView {
         
         let swipeUpGestureRecognizer = UISwipeGestureRecognizer(target: self, action: #selector(didSwipeUpOnDragIndicator(_:)))
         swipeUpGestureRecognizer.direction = .up
-        dragIndicator.addGestureRecognizer(swipeUpGestureRecognizer)
+        captionView.addGestureRecognizer(swipeUpGestureRecognizer)
         
         let swipeDownGestureRecognizer = UISwipeGestureRecognizer(target: self, action: #selector(didSwipeDownOnDragIndicator(_:)))
         swipeDownGestureRecognizer.direction = .down
-        dragIndicator.addGestureRecognizer(swipeDownGestureRecognizer)
+        captionView.addGestureRecognizer(swipeDownGestureRecognizer)
         
         captionViewHeightConstraint = captionView.heightAnchor.constraint(equalToConstant: 100)
         captionViewHeightConstraint?.isActive = true

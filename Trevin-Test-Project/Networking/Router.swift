@@ -36,6 +36,7 @@ public enum Router: URLRequestConvertible {
         let url = try Router.baseURL.asURL()
         var request = URLRequest(url: url)
         request.httpMethod = method.rawValue
+        request.timeoutInterval = 30.0
 
         return try URLEncoding.default.encode(request, with: parameters)
     }

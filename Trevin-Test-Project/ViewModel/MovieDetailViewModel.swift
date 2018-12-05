@@ -49,7 +49,7 @@ struct MovieDetail: MovieDetailViewModel {
     }
 }
 
-final class MovieDetailDataSource {
+class MovieDetailDataSource {
     var movieID: String?
     
     private let networkService = NetworkService()
