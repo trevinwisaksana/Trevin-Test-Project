@@ -7,39 +7,49 @@
 //
 
 import UIKit
+import Kingfisher
 
 final class MovieDetailViewController: UIViewController {
     
     // MARK: - Internal Properties
     
-    private lazy var posterImageView: UIImageView = {
-        let imageView = UIImageView()
-        imageView.contentMode = .scaleAspectFit
-        return imageView
+    lazy var movieDetailView: MovieDetailView = {
+        let view = MovieDetailView(model: model, frame: .zero)
+        return view
     }()
     
     // MARK: - Public Properties
     
-    public var movie: MovieViewModel? {
-        didSet {
-            
-        }
-    }
+    public var model: MovieViewModel?
     
     // MARK: - Setup
     
-    init(movie: MovieViewModel) {
+    init(model: MovieViewModel) {
         super.init(nibName: nil, bundle: nil)
         
-        self.movie = movie
+        self.model = model
     }
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    private func setup() {
+    override func viewDidLoad() {
+        super.viewDidLoad()
         
+        setup()
+    }
+    
+    private func setup() {
+        view.addSubview(movieDetailView)
+        movieDetailView.fillInSuperview()
+        
+        movieDetailView.closeButton.addTarget(self, action: #selector(didTapCloseButton(_:)), for: .touchUpInside)
+    }
+    
+    @objc
+    private func didTapCloseButton(_ sender: UIButton) {
+        dismiss(animated: true, completion: nil)
     }
     
 }

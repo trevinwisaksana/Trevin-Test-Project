@@ -39,8 +39,6 @@ final class MovieCell: UICollectionViewCell {
     private func setup() {
         addSubview(posterImageView)
         posterImageView.fillInSuperview()
-        
-        layer.cornerRadius = 8
     }
     
     // MARK: - Dependency injection

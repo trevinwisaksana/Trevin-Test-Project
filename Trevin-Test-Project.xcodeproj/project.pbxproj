@@ -10,6 +10,7 @@
 		B842BFF668805F9EBDFDEE09 /* Pods_Trevin_Test_Project.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 510525829AA2F70A02916FEB /* Pods_Trevin_Test_Project.framework */; };
 		C3A1CC945625231F94C70FA2 /* Pods_Trevin_Test_ProjectTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DDF66A79D66252F6E022FD4D /* Pods_Trevin_Test_ProjectTests.framework */; };
 		DD10F7AF21B7797200C20906 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD10F7AE21B7797200C20906 /* SearchViewController.swift */; };
+		DD10F7B121B78C1B00C20906 /* MovieDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD10F7B021B78C1B00C20906 /* MovieDetailView.swift */; };
 		DD2BE89621B6952F00B74C28 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD2BE89521B6952F00B74C28 /* AppDelegate.swift */; };
 		DD2BE89D21B6953200B74C28 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DD2BE89C21B6953200B74C28 /* Assets.xcassets */; };
 		DD2BE8A021B6953200B74C28 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD2BE89E21B6953200B74C28 /* LaunchScreen.storyboard */; };
@@ -51,6 +52,7 @@
 		8A5F1536D4D31DBBFB4E417A /* Pods-Trevin-Test-ProjectTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Trevin-Test-ProjectTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Trevin-Test-ProjectTests/Pods-Trevin-Test-ProjectTests.release.xcconfig"; sourceTree = "<group>"; };
 		BB16C18B2FB4AE3210EC47AF /* Pods-Trevin-Test-Project.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Trevin-Test-Project.release.xcconfig"; path = "Pods/Target Support Files/Pods-Trevin-Test-Project/Pods-Trevin-Test-Project.release.xcconfig"; sourceTree = "<group>"; };
 		DD10F7AE21B7797200C20906 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		DD10F7B021B78C1B00C20906 /* MovieDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetailView.swift; sourceTree = "<group>"; };
 		DD2BE89221B6952F00B74C28 /* Trevin-Test-Project.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Trevin-Test-Project.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DD2BE89521B6952F00B74C28 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DD2BE89C21B6953200B74C28 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -110,6 +112,14 @@
 				DDF66A79D66252F6E022FD4D /* Pods_Trevin_Test_ProjectTests.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		DD10F7B221B7A17600C20906 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				DD2BE8CE21B6C60C00B74C28 /* MovieCell.swift */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 		DD2BE88921B6952F00B74C28 = {
@@ -189,7 +199,8 @@
 		DD2BE8D021B6C60F00B74C28 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				DD2BE8CE21B6C60C00B74C28 /* MovieCell.swift */,
+				DD10F7B021B78C1B00C20906 /* MovieDetailView.swift */,
+				DD10F7B221B7A17600C20906 /* Cells */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -431,6 +442,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DD10F7B121B78C1B00C20906 /* MovieDetailView.swift in Sources */,
 				DD2BE8E221B7685700B74C28 /* Reachability.swift in Sources */,
 				DD2BE8D521B6CE4D00B74C28 /* UIEdgeInsetsExtensions.swift in Sources */,
 				DD2BE8CA21B6B02B00B74C28 /* Router.swift in Sources */,

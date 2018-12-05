@@ -63,8 +63,10 @@ extension MoviesViewController: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
         let cell: MovieCell = collectionView.dequeueReusableCell(for: indexPath)
         cell.model = dataSource.movie(atIndex: indexPath)
+        
         return cell
     }
 }
@@ -73,8 +75,10 @@ extension MoviesViewController: UICollectionViewDataSource {
 
 extension MoviesViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
         let movie = dataSource.movie(atIndex: indexPath)
-        let movieDetailViewController = MovieDetailViewController(movie: movie)
+        let movieDetailViewController = MovieDetailViewController(model: movie)
+        
         present(movieDetailViewController, animated: true, completion: nil)
     }
 }
@@ -83,6 +87,7 @@ extension MoviesViewController: UICollectionViewDelegate {
 
 extension MoviesViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        
         let width = collectionView.frame.width * 0.4
         let height = collectionView.frame.height * 0.3
         
