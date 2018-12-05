@@ -24,10 +24,10 @@ final class MovieDetailViewController: UIViewController {
     
     // MARK: - Setup
     
-    init(title: String) {
+    init(movieID: String) {
         super.init(nibName: nil, bundle: nil)
         
-        dataSource.title = title
+        dataSource.movieID = movieID
     }
     
     required init?(coder aDecoder: NSCoder) {

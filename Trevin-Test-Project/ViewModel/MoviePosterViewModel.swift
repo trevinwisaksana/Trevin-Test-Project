@@ -10,7 +10,7 @@ import SwiftyJSON
 
 protocol MoviePosterViewModel {
     var posterURL: String { get }
-    var title: String { get }
+    var movieID: String { get }
 }
 
 protocol MovieDataSourceDelegate: class {
@@ -18,11 +18,11 @@ protocol MovieDataSourceDelegate: class {
 }
 
 struct MoviePoster: MoviePosterViewModel {
-    var title: String
+    var movieID: String
     var posterURL: String
     
     init?(json: JSON) {
-        guard let title = json["Title"].string else {
+        guard let movieID = json["imdbID"].string else {
             return nil
         }
         
@@ -30,7 +30,7 @@ struct MoviePoster: MoviePosterViewModel {
             return nil
         }
         
-        self.title = title
+        self.movieID = movieID
         self.posterURL = posterURL
     }
 }

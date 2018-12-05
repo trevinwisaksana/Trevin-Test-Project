@@ -97,8 +97,8 @@ extension MoviesViewController: UICollectionViewDataSource {
 extension MoviesViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
-        let title = dataSource.movie(atIndex: indexPath).title
-        let movieDetailViewController = MovieDetailViewController(title: title)
+        let movieID = dataSource.movie(atIndex: indexPath).movieID
+        let movieDetailViewController = MovieDetailViewController(movieID: movieID)
         
         present(movieDetailViewController, animated: true, completion: nil)
     }

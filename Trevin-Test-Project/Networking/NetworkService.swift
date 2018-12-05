@@ -37,8 +37,8 @@ struct NetworkService {
         }
     }
     
-    func fetchMovie(withTitle title: String, completion: @escaping ((MovieDetail?, Error?) -> Void)) {
-        let movieURL = Router.movie(title: title)
+    func fetchMovie(withID id: String, completion: @escaping ((MovieDetail?, Error?) -> Void)) {
+        let movieURL = Router.movie(id: id)
         
         Alamofire.request(movieURL).validate().responseJSON { (response) in
             switch response.result {

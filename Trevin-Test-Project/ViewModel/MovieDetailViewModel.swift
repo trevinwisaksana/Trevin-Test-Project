@@ -50,13 +50,13 @@ struct MovieDetail: MovieDetailViewModel {
 }
 
 final class MovieDetailDataSource {
-    var title: String?
+    var movieID: String?
     
     private let networkService = NetworkService()
     
     func fetchMovie(completion: @escaping (MovieDetail?) -> Void) {
-        guard let title = title else { return }
-        networkService.fetchMovie(withTitle: title) { (movie, error) in
+        guard let movieID = movieID else { return }
+        networkService.fetchMovie(withID: movieID) { (movie, error) in
             if let _ = error {
                 completion(nil)
                 return
