@@ -45,8 +45,7 @@ final class MoviesViewController: UIViewController {
     }
     
     private func setup() {
-        // If there's no connection, display alert
-        networkConnectionCheck()
+        networkConnectivityCheck()
         
         hideKeyboardWhenTappedAround()
         
@@ -56,7 +55,7 @@ final class MoviesViewController: UIViewController {
         moviesCollectionView.fillInSuperview()
         
         moviesCollectionView.setInstruction()
-                
+        
         dataSource.delegate = self
         
         navigationItem.titleView = searchBar
@@ -115,11 +114,14 @@ extension MoviesViewController: UICollectionViewDataSource {
 
 extension MoviesViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        networkConnectivityCheck()
         
-        let movieID = dataSource.movie(atIndex: indexPath).movieID
-        let movieDetailViewController = MovieDetailViewController(movieID: movieID)
-        
-        present(movieDetailViewController, animated: true, completion: nil)
+        if ReachabilityHelper.isInternetAvailable() {
+            let movieID = dataSource.movie(atIndex: indexPath).movieID
+            let movieDetailViewController = MovieDetailViewController(movieID: movieID)
+            
+            present(movieDetailViewController, animated: true, completion: nil)
+        }
     }
 }
 
@@ -151,8 +153,12 @@ extension MoviesViewController: UISearchBarDelegate {
     }
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        networkConnectionCheck()
-        dataSource.fetchMovies(withTitle: searchBar.text ?? "")
+        networkConnectivityCheck()
+        
+        if ReachabilityHelper.isInternetAvailable() {
+            dataSource.fetchMovies(withTitle: searchBar.text ?? "")
+        }
+        
         dismissKeyboard()
     }
 }
