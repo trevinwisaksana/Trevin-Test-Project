@@ -12,7 +12,22 @@ final class MovieDetailView: UIView {
     
     // MARK: - View Model
     
-    public var model: MovieViewModel?
+    public var model: MovieDetailViewModel? {
+        didSet {
+            if let model = model {
+                titleLabel.text = model.title
+                yearLabel.text = model.year
+                plotLabel.text = model.plot
+                
+                do {
+                    let posterURL = try model.posterURL.asURL()
+                    posterImageView.kf.setImage(with: posterURL)
+                } catch {
+                    // TODO: Handle error
+                }
+            }
+        }
+    }
     
     // MARK: - Internal Properties
     
@@ -34,7 +49,16 @@ final class MovieDetailView: UIView {
     lazy var posterImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.contentMode = .scaleAspectFit
+        imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView
+    }()
+    
+    lazy var posterScrollView: UIScrollView = {
+        let scrollView = UIScrollView(frame: .zero)
+        scrollView.minimumZoomScale = 1.0
+        scrollView.maximumZoomScale = 6.0
+        scrollView.delegate = self
+        return scrollView
     }()
     
     lazy var captionView: UIView = {
@@ -49,6 +73,7 @@ final class MovieDetailView: UIView {
         let label = UILabel()
         label.textColor = .white
         label.font = UIFont(name: "HelveticaNeue-Bold", size: 20.0)
+        label.numberOfLines = 0
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -63,21 +88,18 @@ final class MovieDetailView: UIView {
     
     lazy var plotLabel: UILabel = {
         let label = UILabel()
+        label.textColor = .white
+        label.numberOfLines = 0
+        label.font = UIFont(name: "HelveticaNeue", size: 15.0)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
     
-    // MARK: - Setup
+    // MARK: - Private Properties
     
-    init(model: MovieViewModel?, frame: CGRect) {
-        super.init(frame: frame)
-        
-        if let model = model {
-            self.model = model
-        }
-        
-        setup()
-    }
+    private var captionViewHeightConstraint: NSLayoutConstraint?
+    
+    // MARK: - Setup
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -92,14 +114,27 @@ final class MovieDetailView: UIView {
     private func setup() {
         addSubview(closeButton)
         
-        addSubview(posterImageView)
-        posterImageView.fillInSuperview()
+        addSubview(posterScrollView)
+        posterScrollView.fillInSuperview()
+        posterScrollView.addSubview(posterImageView)
+        sendSubviewToBack(posterScrollView)
         
         addSubview(captionView)
         captionView.addSubview(titleLabel)
         captionView.addSubview(yearLabel)
         captionView.addSubview(plotLabel)
         captionView.addSubview(dragIndicator)
+        
+        let swipeUpGestureRecognizer = UISwipeGestureRecognizer(target: self, action: #selector(didSwipeUpOnDragIndicator(_:)))
+        swipeUpGestureRecognizer.direction = .up
+        dragIndicator.addGestureRecognizer(swipeUpGestureRecognizer)
+        
+        let swipeDownGestureRecognizer = UISwipeGestureRecognizer(target: self, action: #selector(didSwipeDownOnDragIndicator(_:)))
+        swipeDownGestureRecognizer.direction = .down
+        dragIndicator.addGestureRecognizer(swipeDownGestureRecognizer)
+        
+        captionViewHeightConstraint = captionView.heightAnchor.constraint(equalToConstant: 100)
+        captionViewHeightConstraint?.isActive = true
         
         NSLayoutConstraint.activate([
             closeButton.leftAnchor.constraint(equalTo: leftAnchor, constant: 15),
@@ -110,7 +145,13 @@ final class MovieDetailView: UIView {
             captionView.leftAnchor.constraint(equalTo: leftAnchor),
             captionView.rightAnchor.constraint(equalTo: rightAnchor),
             captionView.bottomAnchor.constraint(equalTo: bottomAnchor, constant: 10),
-            captionView.heightAnchor.constraint(equalToConstant: 100),
+            
+            posterImageView.leftAnchor.constraint(equalTo: posterScrollView.leftAnchor),
+            posterImageView.rightAnchor.constraint(equalTo: posterScrollView.rightAnchor),
+            posterImageView.bottomAnchor.constraint(equalTo: posterScrollView.bottomAnchor),
+            posterImageView.topAnchor.constraint(equalTo: posterScrollView.topAnchor),
+            posterImageView.centerXAnchor.constraint(equalTo: posterScrollView.centerXAnchor),
+            posterImageView.centerYAnchor.constraint(equalTo: posterScrollView.centerYAnchor),
             
             dragIndicator.centerXAnchor.constraint(equalTo: captionView.centerXAnchor),
             dragIndicator.topAnchor.constraint(equalTo: captionView.topAnchor, constant: 6),
@@ -118,23 +159,46 @@ final class MovieDetailView: UIView {
             dragIndicator.widthAnchor.constraint(equalToConstant: 40),
             
             titleLabel.leftAnchor.constraint(equalTo: captionView.leftAnchor, constant: 15),
-            titleLabel.topAnchor.constraint(equalTo: captionView.topAnchor, constant: 15),
+            titleLabel.rightAnchor.constraint(equalTo: captionView.rightAnchor, constant: -15),
+            titleLabel.topAnchor.constraint(equalTo: captionView.topAnchor, constant: 20),
             
-            yearLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 5),
-            yearLabel.leftAnchor.constraint(equalTo: captionView.leftAnchor, constant: 15)
+            yearLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 4),
+            yearLabel.leftAnchor.constraint(equalTo: captionView.leftAnchor, constant: 15),
+            
+            plotLabel.topAnchor.constraint(equalTo: yearLabel.bottomAnchor, constant: 10),
+            plotLabel.leftAnchor.constraint(equalTo: captionView.leftAnchor, constant: 15),
+            plotLabel.rightAnchor.constraint(equalTo: captionView.rightAnchor, constant: -15)
         ])
-        
-        if let model = model {
-            titleLabel.text = model.title
-            yearLabel.text = model.year
-            
-            do {
-                let posterURL = try model.posterURL.asURL()
-                posterImageView.kf.setImage(with: posterURL)
-            } catch {
-                // TODO: Handle error
-            }
+    }
+    
+    @objc
+    private func didSwipeUpOnDragIndicator(_ sender: UISwipeGestureRecognizer) {
+        UIView.animate(withDuration: 0.2) {
+            self.captionViewHeightConstraint?.constant = 500
+            self.layoutIfNeeded()
         }
     }
     
+    @objc
+    private func didSwipeDownOnDragIndicator(_ sender: UISwipeGestureRecognizer) {
+        UIView.animate(withDuration: 0.1) {
+            self.captionViewHeightConstraint?.constant = 100
+            self.layoutIfNeeded()
+        }
+    }
+    
+}
+
+// MARK: - UIScrollViewDelegate
+
+extension MovieDetailView: UIScrollViewDelegate {
+    func viewForZooming(in scrollView: UIScrollView) -> UIView? {
+        return posterImageView
+    }
+    
+    func scrollViewDidZoom(_ scrollView: UIScrollView) {
+        let offsetX = max((scrollView.bounds.width - scrollView.contentSize.width) * 0.5, 0)
+        let offsetY = max((scrollView.bounds.height - scrollView.contentSize.height) * 0.5, 0)
+        scrollView.contentInset = UIEdgeInsets(top: offsetY, left: offsetX, bottom: 0, right: 0)
+    }
 }

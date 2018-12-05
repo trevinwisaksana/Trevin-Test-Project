@@ -9,10 +9,6 @@
 import UIKit
 import Kingfisher
 
-protocol MovieCellViewModel {
-    var posterURL: String { get }
-}
-
 final class MovieCell: UICollectionViewCell {
     
     // MARK: - Internal Properties
@@ -44,7 +40,7 @@ final class MovieCell: UICollectionViewCell {
     // MARK: - Dependency injection
     
     /// The model contains data used to populate the view.
-    public var model: MovieCellViewModel? {
+    public var model: MoviePosterViewModel? {
         didSet {
             if let model = model {
                 do {

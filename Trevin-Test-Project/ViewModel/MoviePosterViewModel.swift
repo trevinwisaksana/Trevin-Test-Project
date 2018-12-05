@@ -8,27 +8,21 @@
 
 import SwiftyJSON
 
-protocol MovieViewModel: MovieCellViewModel {
-    var title: String { get }
-    var year: String { get }
+protocol MoviePosterViewModel {
     var posterURL: String { get }
+    var title: String { get }
 }
 
 protocol MovieDataSourceDelegate: class {
     func didLoadMovieData()
 }
 
-struct Movie: MovieViewModel {
+struct MoviePoster: MoviePosterViewModel {
     var title: String
-    var year: String
     var posterURL: String
     
     init?(json: JSON) {
         guard let title = json["Title"].string else {
-            return nil
-        }
-        
-        guard let year = json["Year"].string else {
             return nil
         }
         
@@ -37,14 +31,13 @@ struct Movie: MovieViewModel {
         }
         
         self.title = title
-        self.year = year
         self.posterURL = posterURL
     }
 }
 
-final class MovieDataSource {
+final class MoviePosterDataSource {
     
-    private var movies = [Movie]() {
+    private var movies = [MoviePoster]() {
         didSet {
             delegate?.didLoadMovieData()
         }
@@ -58,16 +51,12 @@ final class MovieDataSource {
         return movies.count
     }
     
-    func movie(atIndex indexPath: IndexPath) -> Movie {
+    func movie(atIndex indexPath: IndexPath) -> MoviePoster {
         return movies[indexPath.row]
     }
-    
-    func fetchMovies() {
-        
-    }
-    
+
     func fetchMovies(withTitle title: String) {
-        networkService.fetchMovie(withTitle: title) { (movies, error) in
+        networkService.fetchMovies(withTitle: title) { (movies, error) in
             if let _ = error {
                 return
             }
@@ -75,4 +64,5 @@ final class MovieDataSource {
             self.movies = movies
         }
     }
+    
 }

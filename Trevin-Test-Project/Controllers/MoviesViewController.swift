@@ -12,7 +12,7 @@ final class MoviesViewController: UIViewController {
     
     // MARK: - Public Properties
     
-    public var dataSource: MovieDataSource = MovieDataSource()
+    public var dataSource: MoviePosterDataSource = MoviePosterDataSource()
     
     // MARK: - Internal Properties
     
@@ -29,6 +29,12 @@ final class MoviesViewController: UIViewController {
         return collectionView
     }()
     
+    lazy var searchBar: UISearchBar = {
+        let searchBar = UISearchBar(frame: .zero)
+        searchBar.delegate = self
+        return searchBar
+    }()
+    
     // MARK: - Setup
     
     override func viewDidLoad() {
@@ -38,6 +44,8 @@ final class MoviesViewController: UIViewController {
     }
     
     private func setup() {
+        hideKeyboardWhenTappedAround()
+        
         moviesCollectionView.register(cell: MovieCell.self)
         
         view.addSubview(moviesCollectionView)
@@ -46,7 +54,20 @@ final class MoviesViewController: UIViewController {
         dataSource.delegate = self
         dataSource.fetchMovies(withTitle: "Interstellar")
         
+        navigationItem.titleView = searchBar
+        
         view.backgroundColor = .white
+    }
+    
+    private func hideKeyboardWhenTappedAround() {
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
+        tapGesture.cancelsTouchesInView = false
+        moviesCollectionView.addGestureRecognizer(tapGesture)
+    }
+    
+    @objc
+    private func dismissKeyboard() {
+        searchBar.endEditing(true)
     }
     
     private func reloadData() {
@@ -76,8 +97,8 @@ extension MoviesViewController: UICollectionViewDataSource {
 extension MoviesViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
-        let movie = dataSource.movie(atIndex: indexPath)
-        let movieDetailViewController = MovieDetailViewController(model: movie)
+        let title = dataSource.movie(atIndex: indexPath).title
+        let movieDetailViewController = MovieDetailViewController(title: title)
         
         present(movieDetailViewController, animated: true, completion: nil)
     }
@@ -100,6 +121,15 @@ extension MoviesViewController: UICollectionViewDelegateFlowLayout {
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
         return 10.0
+    }
+}
+
+// MARK: - UISearchBarDelegate
+
+extension MoviesViewController: UISearchBarDelegate {
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        dataSource.fetchMovies(withTitle: searchBar.text ?? "")
+        dismissKeyboard()
     }
 }
 

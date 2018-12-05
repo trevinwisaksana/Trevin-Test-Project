@@ -14,10 +14,11 @@ public enum Router: URLRequestConvertible {
     static let baseURL: String = "http://www.omdbapi.com/?apikey=5a26eb15"
     
     case movie(title: String)
+    case search(movie: String)
     
     var method: HTTPMethod {
         switch self {
-        case .movie:
+        case .movie, .search:
             return .get
         }
     }
@@ -26,7 +27,9 @@ public enum Router: URLRequestConvertible {
         let parameters: [String: Any] = {
             switch self {
             case .movie(let title):
-                return ["s" : title]
+                return ["t" : title, "plot": "full"]
+            case .search(let movie):
+                return ["s" : movie]
             }
         }()
         

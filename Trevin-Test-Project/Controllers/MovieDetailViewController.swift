@@ -14,20 +14,20 @@ final class MovieDetailViewController: UIViewController {
     // MARK: - Internal Properties
     
     lazy var movieDetailView: MovieDetailView = {
-        let view = MovieDetailView(model: model, frame: .zero)
+        let view = MovieDetailView(frame: .zero)
         return view
     }()
     
     // MARK: - Public Properties
     
-    public var model: MovieViewModel?
+    public var dataSource = MovieDetailDataSource()
     
     // MARK: - Setup
     
-    init(model: MovieViewModel) {
+    init(title: String) {
         super.init(nibName: nil, bundle: nil)
         
-        self.model = model
+        dataSource.title = title
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -43,6 +43,14 @@ final class MovieDetailViewController: UIViewController {
     private func setup() {
         view.addSubview(movieDetailView)
         movieDetailView.fillInSuperview()
+        
+        dataSource.fetchMovie { (movie) in
+            if let movie = movie {
+                DispatchQueue.main.async {
+                    self.movieDetailView.model = movie
+                }
+            }
+        }
         
         movieDetailView.closeButton.addTarget(self, action: #selector(didTapCloseButton(_:)), for: .touchUpInside)
     }
