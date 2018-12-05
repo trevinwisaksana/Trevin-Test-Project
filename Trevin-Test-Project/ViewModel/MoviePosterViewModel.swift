@@ -17,7 +17,8 @@ protocol MovieDataSourceDelegate: class {
     func didLoadMovieData()
 }
 
-struct MoviePoster: MoviePosterViewModel {
+struct MoviePoster: MoviePosterViewModel, Keyed {
+    var key: String?
     var movieID: String
     var posterURL: String
     
@@ -47,6 +48,9 @@ final class MoviePosterDataSource {
     
     weak var delegate: MovieDataSourceDelegate?
     
+    var currentPage: Int = 1
+    var currentMovieTitle = ""
+    
     var numberOfMovies: Int {
         return movies.count
     }
@@ -56,12 +60,17 @@ final class MoviePosterDataSource {
     }
 
     func fetchMovies(withTitle title: String) {
-        networkService.fetchMovies(withTitle: title) { (movies, error) in
+        networkService.fetchMovies(withTitle: title, atPage: currentPage) { (movies, error) in
             if let _ = error {
                 return
             }
             
-            self.movies = movies
+            if title == self.currentMovieTitle {
+                self.movies.append(contentsOf: movies)
+            } else {
+                self.currentMovieTitle = title
+                self.movies = movies
+            }
         }
     }
     

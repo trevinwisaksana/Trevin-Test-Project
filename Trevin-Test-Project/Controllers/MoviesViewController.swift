@@ -52,10 +52,8 @@ final class MoviesViewController: UIViewController {
         moviesCollectionView.fillInSuperview()
         
         dataSource.delegate = self
-        dataSource.fetchMovies(withTitle: "Interstellar")
         
         navigationItem.titleView = searchBar
-        
         view.backgroundColor = .white
     }
     
@@ -84,6 +82,11 @@ extension MoviesViewController: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
+        if indexPath.row >= dataSource.numberOfMovies - 1 {
+            dataSource.currentPage += 1
+            dataSource.fetchMovies(withTitle: searchBar.text ?? "")
+        }
         
         let cell: MovieCell = collectionView.dequeueReusableCell(for: indexPath)
         cell.model = dataSource.movie(atIndex: indexPath)
