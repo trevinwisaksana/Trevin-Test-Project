@@ -51,5 +51,15 @@ class Trevin_Test_ProjectTests: XCTestCase {
         
         XCTAssertNotNil(movieDetail)
     }
+    
+    func testFailingMovieDetailDataParsing() {
+        guard let json = dummyDataFactory?.faultyMovieDetailData() else {
+            fatalError("Failed to retrieve JSON data.")
+        }
+        
+        let movieDetail = MovieDetail(json: json)
+        
+        XCTAssertNil(movieDetail)
+    }
 
 }

@@ -12,7 +12,7 @@ extension UIViewController {
     
     // MARK: - Reachability
     
-    func networkConnectCheck() {
+    func networkConnectionCheck() {
         if !ReachabilityHelper.isInternetAvailable() {
             let alert = UIAlertController(title: "Network Error", message: "You are not connected to the internet.", preferredStyle: .alert)
             let action = UIAlertAction(title: "Dismiss", style: .default, handler: nil)

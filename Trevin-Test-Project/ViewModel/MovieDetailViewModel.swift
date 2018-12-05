@@ -30,7 +30,7 @@ struct MovieDetail: MovieDetailViewModel {
             return nil
         }
         
-        guard let plot = json["Plot"].string else {
+        guard let plot = json["Plot"].string, plot != "N/A" else {
             return nil
         }
         

@@ -84,6 +84,17 @@ extension UICollectionView {
 
 extension UICollectionView {
     
+    func setInstruction() {
+        let messageLabel = UILabel(frame: CGRect(x: 0, y: 0, width: 100, height: self.bounds.size.height))
+        messageLabel.text = "Tap the search bar above to search for movies."
+        messageLabel.textColor = UIColor(r: 0, g: 0, b: 0, a: 0.3)
+        messageLabel.numberOfLines = 0
+        messageLabel.textAlignment = .center
+        messageLabel.font = UIFont(name: "HelveticaNeue-Bold", size: 16)
+        
+        self.backgroundView = messageLabel
+    }
+    
     func setEmptyMessage() {
         let messageLabel = UILabel(frame: CGRect(x: 0, y: 0, width: self.bounds.size.width, height: self.bounds.size.height))
         messageLabel.text = "Your search has shown no results."
@@ -93,7 +104,7 @@ extension UICollectionView {
         messageLabel.font = UIFont(name: "HelveticaNeue-Bold", size: 16)
         messageLabel.sizeToFit()
         
-        self.backgroundView = messageLabel;
+        self.backgroundView = messageLabel
     }
     
     func restore() {

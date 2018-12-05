@@ -49,6 +49,7 @@ class MoviePosterDataSource {
     
     var currentPage: Int = 1
     var currentMovieTitle = ""
+    var isFetching = false
     
     var numberOfMovies: Int {
         return movies.count
@@ -58,10 +59,11 @@ class MoviePosterDataSource {
         return movies[indexPath.row]
     }
 
-    func fetchMovies(withTitle title: String, success: @escaping (Bool) -> Void) {
+    func fetchMovies(withTitle title: String) {
+        isFetching = true
+        
         networkService.fetchMovies(withTitle: title, atPage: currentPage) { (movies, error) in
             if let _ = error {
-                success(false)
                 return
             }
             
@@ -72,7 +74,7 @@ class MoviePosterDataSource {
                 self.movies = movies
             }
             
-            success(true)
+            self.isFetching = false
         }
     }
     

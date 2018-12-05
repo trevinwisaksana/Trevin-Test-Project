@@ -46,7 +46,7 @@ final class MoviesViewController: UIViewController {
     
     private func setup() {
         // If there's no connection, display alert
-        networkConnectCheck()
+        networkConnectionCheck()
         
         hideKeyboardWhenTappedAround()
         
@@ -55,6 +55,8 @@ final class MoviesViewController: UIViewController {
         view.addSubview(moviesCollectionView)
         moviesCollectionView.fillInSuperview()
         
+        moviesCollectionView.setInstruction()
+                
         dataSource.delegate = self
         
         navigationItem.titleView = searchBar
@@ -81,6 +83,10 @@ final class MoviesViewController: UIViewController {
 // MARK: - UICollectionViewDelegate
 
 extension MoviesViewController: UICollectionViewDataSource {
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return 1
+    }
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return dataSource.numberOfMovies
     }
@@ -93,11 +99,9 @@ extension MoviesViewController: UICollectionViewDataSource {
             collectionView.restore()
         }
         
-        if indexPath.row >= dataSource.numberOfMovies - 1 {
+        if indexPath.row >= dataSource.numberOfMovies - 1 && dataSource.isFetching == false {
             dataSource.currentPage += 1
-            dataSource.fetchMovies(withTitle: searchBar.text ?? "", success: { (isSuccessful) in
-                
-            })
+            dataSource.fetchMovies(withTitle: searchBar.text ?? "")
         }
         
         let cell: MovieCell = collectionView.dequeueReusableCell(for: indexPath)
@@ -142,11 +146,13 @@ extension MoviesViewController: UICollectionViewDelegateFlowLayout {
 // MARK: - UISearchBarDelegate
 
 extension MoviesViewController: UISearchBarDelegate {
+    func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
+        moviesCollectionView.restore()
+    }
+    
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        dataSource.fetchMovies(withTitle: searchBar.text ?? "", success: { (isSuccessful) in
-            
-        })
-        
+        networkConnectionCheck()
+        dataSource.fetchMovies(withTitle: searchBar.text ?? "")
         dismissKeyboard()
     }
 }

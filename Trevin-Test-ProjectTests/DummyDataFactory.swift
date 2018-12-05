@@ -65,4 +65,18 @@ class DummyDataFactory {
         return jsonArray
     }
     
+    func faultyMovieDetailData() -> JSON {
+        let testBundle = Bundle(for: type(of: self))
+        
+        guard let path = testBundle.path(forResource: "faulty_movie_detail_data", ofType: "json") else {
+            fatalError("Failed to retrieve data.")
+        }
+        
+        guard let data = NSData(contentsOfFile: path) else {
+            fatalError("Failed to retrieve data.")
+        }
+        
+        return JSON(data)
+    }
+    
 }

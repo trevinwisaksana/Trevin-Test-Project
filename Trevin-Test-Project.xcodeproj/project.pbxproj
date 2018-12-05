@@ -16,6 +16,7 @@
 		DD10F7C021B80A2600C20906 /* faulty_movie_search_data.json in Resources */ = {isa = PBXBuildFile; fileRef = DD10F7BF21B80A2600C20906 /* faulty_movie_search_data.json */; };
 		DD10F7C221B80CB400C20906 /* DummyDataFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD10F7C121B80CB400C20906 /* DummyDataFactory.swift */; };
 		DD10F7C421B813EC00C20906 /* ample_movie_detail_data.json in Resources */ = {isa = PBXBuildFile; fileRef = DD10F7C321B813EC00C20906 /* ample_movie_detail_data.json */; };
+		DD10F7C621B8150800C20906 /* faulty_movie_detail_data.json in Resources */ = {isa = PBXBuildFile; fileRef = DD10F7C521B8150800C20906 /* faulty_movie_detail_data.json */; };
 		DD2BE89621B6952F00B74C28 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD2BE89521B6952F00B74C28 /* AppDelegate.swift */; };
 		DD2BE89D21B6953200B74C28 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DD2BE89C21B6953200B74C28 /* Assets.xcassets */; };
 		DD2BE8A021B6953200B74C28 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD2BE89E21B6953200B74C28 /* LaunchScreen.storyboard */; };
@@ -55,6 +56,7 @@
 		DD10F7BF21B80A2600C20906 /* faulty_movie_search_data.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = faulty_movie_search_data.json; sourceTree = "<group>"; };
 		DD10F7C121B80CB400C20906 /* DummyDataFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DummyDataFactory.swift; sourceTree = "<group>"; };
 		DD10F7C321B813EC00C20906 /* ample_movie_detail_data.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = ample_movie_detail_data.json; sourceTree = "<group>"; };
+		DD10F7C521B8150800C20906 /* faulty_movie_detail_data.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = faulty_movie_detail_data.json; sourceTree = "<group>"; };
 		DD2BE89221B6952F00B74C28 /* Trevin-Test-Project.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Trevin-Test-Project.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DD2BE89521B6952F00B74C28 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		DD2BE89C21B6953200B74C28 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -158,6 +160,7 @@
 				DD2BE8AA21B6953200B74C28 /* Trevin_Test_ProjectTests.swift */,
 				DD10F7C121B80CB400C20906 /* DummyDataFactory.swift */,
 				DD10F7C321B813EC00C20906 /* ample_movie_detail_data.json */,
+				DD10F7C521B8150800C20906 /* faulty_movie_detail_data.json */,
 				DD10F7BB21B8055200C20906 /* ample_movie_search_data.json */,
 				DD10F7BF21B80A2600C20906 /* faulty_movie_search_data.json */,
 				DD2BE8AC21B6953200B74C28 /* Info.plist */,
@@ -326,6 +329,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DD10F7C621B8150800C20906 /* faulty_movie_detail_data.json in Resources */,
 				DD10F7BC21B8055200C20906 /* ample_movie_search_data.json in Resources */,
 				DD10F7C021B80A2600C20906 /* faulty_movie_search_data.json in Resources */,
 				DD10F7C421B813EC00C20906 /* ample_movie_detail_data.json in Resources */,
